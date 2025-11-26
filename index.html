@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Enhance your Teeworlds experience with KRX Team's advanced client. Featuring a suite of tools and utilities designed to refine your skills and customize your gameplay.">
+        
+        <title>KRX Client - Professional Training Software for Teeworlds</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'IBM Plex Sans', sans-serif;
+                line-height: 1.6;
+                color: #fff;
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+                min-height: 100vh;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* Header */
+            .site-header {
+                padding: 20px 0;
+                background: rgba(13, 17, 33, 0.9);
+                backdrop-filter: blur(10px);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .site-header-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .header-logo-image {
+                height: 40px;
+            }
+
+            .header-nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+
+            .header-nav a {
+                color: #fff;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 5px;
+                transition: background 0.3s;
+            }
+
+            .header-nav a:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 24px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s;
+            }
+
+            .button-primary {
+                background: #2563eb;
+                color: white;
+            }
+
+            .button-primary:hover {
+                background: #1d4ed8;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 100px 0;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+                background: linear-gradient(45deg, #60a5fa, #3b82f6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .hero-paragraph {
+                font-size: 1.2rem;
+                max-width: 600px;
+                margin: 0 auto 40px;
+                color: #d1d5db;
+            }
+
+            .hero-cta {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .icons {
+                color: #60a5fa;
+                transition: color 0.3s;
+            }
+
+            .icons:hover {
+                color: #3b82f6;
+            }
+
+            /* Features Section */
+            .features {
+                padding: 80px 0;
+                background: rgba(13, 17, 33, 0.5);
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .section-paragraph {
+                text-align: center;
+                color: #d1d5db;
+                margin-bottom: 60px;
+            }
+
+            .features-wrap {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+
+            .feature {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 40px;
+                border-radius: 10px;
+                text-align: center;
+                transition: transform 0.3s;
+            }
+
+            .feature:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-icon {
+                margin-bottom: 20px;
+            }
+
+            .feature-title {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+
+            /* Download Section */
+            .download {
+                padding: 80px 0;
+                text-align: center;
+            }
+
+            .download-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 50px;
+                border-radius: 15px;
+                max-width: 600px;
+                margin: 0 auto;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .download-card h3 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #f87171;
+            }
+
+            .password-note {
+                background: rgba(248, 113, 113, 0.1);
+                border: 1px solid rgba(248, 113, 113, 0.3);
+                padding: 15px;
+                border-radius: 8px;
+                margin: 25px 0;
+                font-size: 1.1rem;
+            }
+
+            .password {
+                font-family: monospace;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #f87171;
+                background: rgba(0, 0, 0, 0.3);
+                padding: 5px 15px;
+                border-radius: 5px;
+                display: inline-block;
+                margin: 10px 0;
+            }
+
+            .download-button {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: #10b981;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: 600;
+                transition: background 0.3s;
+                margin: 20px 0;
+            }
+
+            .download-button:hover {
+                background: #059669;
+            }
+
+            .features-list {
+                list-style: none;
+                text-align: left;
+                margin: 30px 0;
+            }
+
+            .features-list li {
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .features-list li:before {
+                content: "✓";
+                color: #10b981;
+                font-weight: bold;
+            }
+
+            /* Footer */
+            .site-footer {
+                padding: 40px 0;
+                background: rgba(13, 17, 33, 0.9);
+                text-align: center;
+            }
+
+            .footer-links {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-links a {
+                color: #d1d5db;
+                text-decoration: none;
+            }
+
+            .footer-links a:hover {
+                color: #60a5fa;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .site-header-inner {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                
+                .hero-cta {
+                    flex-direction: column;
+                }
+                
+                .footer-links {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .download-card {
+                    padding: 30px 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand">
+                        <a href="#">
+                            <img class="header-logo-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yMCA4QzE0LjQ3NzIgOCAxMCAxMi40NzcyIDEwIDE4VjIyQzEwIDI3LjUyMjggMTQuNDc3MiAzMiAyMCAzMkg4MEM4NS41MjI4IDMyIDkwIDI3LjUyMjggOTAgMjJWMThDOTAgMTIuNDc3MiA4NS41MjI4IDggODAgOEgyMFpNMjAgMTJINzJDNzUuMzEzNyAxMiA3OCAxNC42ODYzIDc4IDE4VjIyQzc4IDI1LjMxMzcgNzUuMzEzNyAyOCA3MiAyOEgyMEMxNi42ODYzIDI4IDE0IDI1LjMxMzcgMTQgMjJWMThDMTQgMTQuNjg2MyAxNi42ODYzIDEyIDIwIDEyWiIgZmlsbD0iIzYwYTVmYSIvPjxwYXRoIGQ9Ik0zMCAxNkgzNlYyNEgzMFYxNloiIGZpbGw9IiM2MGE1ZmEiLz48L3N2Zz4=" alt="KRX Team Logo">
+                        </a>
+                    </div>
+                    <nav class="header-nav">
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#download">Download</a></li>
+                            <li><a class="button button-primary" href="#download">Get Ultimate</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1 class="hero-title">KRX Client Ultimate</h1>
+                    <p class="hero-paragraph">The complete training suite for competitive Teeworlds players. Unlock all advanced features and take your skills to the highest level.</p>
+                    <div class="hero-cta">
+                        <a href="#download" class="button button-primary">Download Ultimate</a>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="#" class="icons">
+                                <svg style="width: 2rem; height: 2rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.019a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.8 8.18 1.8 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.106c.36.698.772 1.362 1.225 1.994a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.624a.061.061 0 0 0-.031-.03z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="icons">
+                                <svg style="width: 2rem; height: 2rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.87 6.19-.08.59-.41.78-.68.78-.48 0-1.25-.27-2.07-.53-1.13-.31-1.81-.48-2.92-.48-1.18 0-1.62.33-2.57.89l-.39.23-.45-.66c.6-.52.99-.75 1.59-1.17.86-.60 1.23-.75 1.94-1.21.76-.48 1.11-.85 1.11-1.45 0-.36-.20-.83-1.11-1.45-.41-.23-1.10-.50-1.56-.58l.06-.09c.65-.23 1.93-.54 3.03-.41.45.06 1.36.27 1.85.51.31.15.57.35.74.59.25.35.33.77.25 1.22z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <div class="container">
+                    <h2 class="section-title">Ultimate Features</h2>
+                    <p class="section-paragraph">Everything you need to dominate in Teeworlds</p>
+                    
+                    <div class="features-wrap">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg style="width: 4rem; height: 4rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h4 class="feature-title">Advanced Targeting</h4>
+                            <p>Precision aiming analysis with real-time feedback and performance tracking.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg style="width: 4rem; height: 4rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+                                </svg>
+                            </div>
+                            <h4 class="feature-title">Full Replay System</h4>
+                            <p>Record and analyze every match with frame-by-frame review capabilities.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg style="width: 4rem; height: 4rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.78-1.18 2.73-3.12 3.16z"/>
+                                </svg>
+                            </div>
+                            <h4 class="feature-title">Performance Analytics</h4>
+                            <p>Detailed statistics and improvement tracking for all aspects of your gameplay.</p>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg style="width: 4rem; height: 4rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                                </svg>
+                            </div>
+                            <h4 class="feature-title">Map Route Simulator</h4>
+                            <p>Practice and optimize your movement on any map with advanced pathing tools.</p>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg style="width: 4rem; height: 4rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                                </svg>
+                            </div>
+                            <h4 class="feature-title">Reaction Time Trainer</h4>
+                            <p>Sharpen your reflexes with specialized training modules and timing exercises.</p>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg style="width: 4rem; height: 4rem;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                                </svg>
+                            </div>
+                            <h4 class="feature-title">Priority Support</h4>
+                            <p>Get dedicated assistance and quick responses from our support team.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="download" class="download">
+                <div class="container">
+                    <h2 class="section-title">Download Ultimate Version</h2>
+                    <p class="section-paragraph">Get the complete KRX Client Ultimate package</p>
+                    
+                    <div class="download-card">
+                        <h3>KRX Client Ultimate</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; color: #d1d5db;">
+                            Complete training suite with all premium features unlocked
+                        </p>
+                        
+                        <div class="password-note">
+                            <strong>Important:</strong> The archive is password protected
+                            <div class="password">krx</div>
+                            Use this password to extract the files after download
+                        </div>
+
+                        <ul class="features-list">
+                            <li>All Ultimate Features Unlocked</li>
+                            <li>Advanced Targeting Analyzer</li>
+                            <li>Full Replay System</li>
+                            <li>Map Route Simulator</li>
+                            <li>Reaction Time Trainer</li>
+                            <li>Priority Support Access</li>
+                            <li>Beta Features Included</li>
+                            <li>Regular Updates</li>
+                        </ul>
+
+                        <a href="https://drive.google.com/file/d/14_ESrkBZ2nmyL9MuXGbzZG5OrUp2Y_1a/view?usp=sharing" class="download-button" target="_blank">
+                            <svg style="width: 1.5rem; height: 1.5rem;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                            Download Ultimate
+                        </a>
+                        
+                        <p style="color: #d1d5db; font-size: 0.9rem;">
+                            Version 1.36.1 | Windows 64-bit | Archive Password: <strong>krx</strong>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="brand">
+                    <img class="header-logo-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yMCA4QzE0LjQ3NzIgOCAxMCAxMi40NzcyIDEwIDE4VjIyQzEwIDI3LjUyMjggMTQuNDc3MiAzMiAyMCAzMkg4MEM4NS41MjI4IDMyIDkwIDI3LjUyMjggOTAgMjJWMThDOTAgMTIuNDc3MiA4NS41MjI4IDggODAgOEgyMFpNMjAgMTJINzJDNzUuMzEzNyAxMiA3OCAxNC42ODYzIDc4IDE4VjIyQzc4IDI1LjMxMzcgNzUuMzEzNyAyOCA3MiAyOEgyMEMxNi42ODYzIDI4IDE0IDI1LjM1MTcgMTQgMjJWMThDMTQgMTQuNjg2MyAxNi42ODYzIDEyIDIwIDEyWiIgZmlsbD0iIzYwYTVmYSIvPjxwYXRoIGQ9Ik0zMCAxNkgzNlYyNEgzMFYxNloiIGZpbGw9IiM2MGE1ZmEiLz48L3N2Zz4=" alt="KRX Team Logo">
+                </div>
+                <p style="margin: 20px 0; color: #d1d5db;">© 2025 KRX Team. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
